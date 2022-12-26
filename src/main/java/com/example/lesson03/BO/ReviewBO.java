@@ -13,7 +13,19 @@ public class ReviewBO {
 	private ReviewDAO reviewDAO;
 	
 	public Review getReview(int id) {
-		
 		return reviewDAO.selectReview(id);
 	}
+	
+	// input: Review 객체
+	// output: int(인서트가 성공된 행 수)
+	public int addReview(Review review) {
+		return reviewDAO.insertReview(review);
+	}
+	
+	// addReviewAsField(4, "콤비네이션R", "신바다", 5.0, "역시 맛있따!") : input
+	// BO에서는 point같은경우 필수값이 아니기 때문에 Double형으로 선언
+	public int addReviewAsField(int storeId, String menu, String userName, Double point, String review) {
+		return reviewDAO.insertReviewAsField(storeId, menu, userName, point, review);
+	}
+	
 }

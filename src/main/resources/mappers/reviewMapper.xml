@@ -18,4 +18,55 @@
  		WHERE
  			`id` = #{id}
  	</select>
+ 	
+ 	<!-- 결과값을 주지 않으므로 resulttype은 select문에만 존재한다. -->
+ 	<insert id="insertReview" parameterType="com.example.lesson03.model.Review" >
+ 		INSERT INTO `new_review`
+ 		(
+ 			`storeId`
+			,`menu`
+			,`userName`
+			,`point`
+			,`review`
+			,`createdAt`
+			,`updatedAt`
+ 		)
+ 		VALUES
+ 		(
+ 			#{storeId}
+ 			, #{menu}
+ 			, #{userName}
+ 			, #{point}
+ 			, #{review}
+ 			, NOW()
+ 			, NOW()
+ 		)
+ 	</insert>
+ 	<!--  getter를 이용하여  #{storeId}가 실행된 -->
+ 	
+ 	<!-- DAO나 xml에는 오버로딩이 불가하다. -->
+ 	<insert id="insertReviewAsField" parameterType="map">
+		INSERT INTO `new_review`
+ 		(
+ 			`storeId`
+			,`menu`
+			,`userName`
+			,`point`
+			,`review`
+			,`createdAt`
+			,`updatedAt`
+ 		)
+ 		VALUES
+ 		(
+ 			#{storeId}
+ 			, #{menu}
+ 			, #{userName}
+ 			, #{point}
+ 			, #{review}
+ 			, NOW()
+ 			, NOW()
+ 		)	
+ 	</insert>
+ 	<!-- DAO부분에서 @Param("storeId") 이쪽에있는 변수명이 넘어오게됨. -->
+ 	
  </mapper>
