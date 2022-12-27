@@ -69,4 +69,23 @@
  	</insert>
  	<!-- DAO부분에서 @Param("storeId") 이쪽에있는 변수명이 넘어오게됨. -->
  	
+ 	<update id="updateReviewById" parameterType="map">
+ 	
+ 		UPDATE `new_review`
+ 		SET
+ 			`review` = #{review}
+ 			, `updatedAt` = NOW()
+ 		WHERE
+ 			`id` = #{id}
+ 			
+ 	</update>
+ 	
+ 	<delete id="deleteReviewById" parameterType="int">
+ 		DELETE
+ 		FROM
+ 			`new_review`
+ 		WHERE
+ 			`id` = #{id}
+ 	</delete>
+ 	
  </mapper>
