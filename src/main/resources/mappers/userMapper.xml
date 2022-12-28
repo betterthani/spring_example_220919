@@ -23,4 +23,20 @@
 				, NOW()
 			)
 	</insert>
+	
+	<!-- parameterType 는 dao에 selectLastUser(); ()안의 값이 아무것도 없어서 생략  -->
+	<select id="selectLastUser" resultType="com.example.lesson04.model.User">
+		SELECT
+			`id`
+			,`name`
+			,`yyyymmdd`
+			,`introduce`
+			,`email`
+			,`createdAt`
+			,`updatedAt`
+		FROM
+			`new_user`
+		ORDER BY `id` DESC
+		LIMIT 1	
+	</select>
 </mapper>
