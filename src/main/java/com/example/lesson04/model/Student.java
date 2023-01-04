@@ -1,6 +1,6 @@
 package com.example.lesson04.model;
 
-import com.example.lesson01.Data;
+import java.util.Date;
 
 public class Student {
 	private int id;
@@ -8,9 +8,8 @@ public class Student {
 	private String phoneNumber;
 	private String email;
 	private String dreamjob;
-	private Data createdAt;
-	private Data updatedAt;
-	
+	private Date createdAt;
+	private Date updatedAt;
 	
 	public int getId() {
 		return id;
@@ -42,17 +41,19 @@ public class Student {
 	public void setDreamjob(String dreamjob) {
 		this.dreamjob = dreamjob;
 	}
-	public Data getCreatedAt() {
+	public Date getCreatedAt() {
 		return createdAt;
 	}
-	public void setCreatedAt(Data createdAt) {
+	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
-	public Data getUpdatedAt() {
+	public Date getUpdatedAt() {
 		return updatedAt;
 	}
-	public void setUpdatedAt(Data updatedAt) {
+	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+	
+	
 	
 }
