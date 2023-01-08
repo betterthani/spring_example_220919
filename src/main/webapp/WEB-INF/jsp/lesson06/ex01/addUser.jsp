@@ -105,7 +105,7 @@
 				//  key명(소문자) : ""
 					type:"POST" // method부분
 					, url:"/lesson06/ex01/add_user" //form태그상 action
-					, data:{"name":name, "yyyymmdd":yyyymmdd, "email":email, "introduce":introduce} //"@RequestParam value명":"let 변수"
+					, data:{"name":name, "yyyymmdd":yyyymmdd, "email":email, "introduce":introduce} //"@RequestParam 파라미터명(value)":"let 변수"
 					
 					// Response postmapping return 이후 발생
 					, success:function(data){
